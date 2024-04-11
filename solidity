@@ -1,0 +1,55 @@
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12 <0.9.0;
+
+contract Datatypes{
+  int public temprature =-10;
+  uint256 public number;
+  uint8 public age =25;
+  string public text;
+
+  struct person{
+    bool vote;
+    string name;
+    uint age;
+  }
+  enum colour{Red,Blue,Green}
+  colour public favoritrecolour;
+  person public Person;
+  constructor(){
+    number=1 days;
+    text="etherum,Blockchain,solana";
+    favoritrecolour=colour.Green;
+    Person=person({
+      name:"Rakshana",
+      age:18,
+      vote:true
+     });
+  }
+  function op(uint256 a,uint256 b) public pure returns(uint256[5]memory){
+    uint256[5] memory results;
+
+      // Addition
+      results[0] = a+b;
+
+      //Subraction
+      results[1] = a - b;
+
+      //Multiplication
+      results[2] = a * b;
+
+      // Division
+
+       results[3] = a / b;
+
+      //modulus
+
+      results[4] = a % b;
+
+      return results;
+
+  }
+
+  function concatenteText(string memory a, string memory b) public pure returns (string memory) {
+     return string(abi.encodePacked(a, b));
+  }
+}
